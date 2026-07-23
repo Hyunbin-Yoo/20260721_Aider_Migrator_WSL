@@ -315,3 +315,76 @@
   [ordinaryuser@Windows user]$ git config --global user.email "your-email@example.com"
   [ordinaryuser@Windows user]$ git config --global init.defaultBranch main
   ```
+
+## Test Situations
+1. Situation where new repository needs to be created
+   ```shell
+   [ordinaryuser@Windows user]$ project-init '20260721_Aider_Migrator_WSL'
+    --- Assessing Environment: 20260721_Aider_Migrator_WSL ---
+    --> Querying GitHub for existing repositories...
+    --> State: New. Bootstrapping public repository...
+    Initialized empty Git repository in /home/ordinaryuser/GitHub/20260721_Aider_Migrator_WSL/.git/
+    ✓ Created repository (GitHub-Name)/20260721_Aider_Migrator_WSL on github.com
+      https://github.com/(GitHub-Name)/20260721_Aider_Migrator_WSL
+    ✓ Added remote git@github.com:(GitHub-Name)/20260721_Aider_Migrator_WSL.git
+    --> Bootstrapping new private history repository...
+    Initialized empty Git repository in /home/(GitHub-Name)/GitHub/20260721_Aider_Migrator_WSL_Aider_History/.git/
+    [main (root-commit) xxxxxxx] Initialize portable Aider profile
+     1 file changed, 3 insertions(+)
+     create mode 100644 .aider.conf.yml
+    ✓ Created repository (GitHub-Name)/20260721_Aider_Migrator_WSL_Aider_History on github.com
+      https://github.com/(GitHub-Name)/20260721_Aider_Migrator_WSL_Aider_History
+    ✓ Added remote git@github.com:(GitHub-Name)/20260721_Aider_Migrator_WSL_Aider_History.git
+    Enumerating objects: 3, done.
+    Counting objects: 100% (3/3), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    To github.com:(GitHub-Name)/20260721_Aider_Migrator_WSL_Aider_History.git
+     * [new branch]      HEAD -> main
+    branch 'main' set up to track 'origin/main'.
+    ✓ Pushed commits to git@github.com:(GitHub-Name)/20260721_Aider_Migrator_WSL_Aider_History.git
+    --- Setup Complete. Active Directory: /home/ordinaryuser/GitHub/20260721_Aider_Migrator_WSL ---
+    [ordinaryuser@Windows 20260721_Aider_Migrator_WSL]$
+   ```
+
+2. Situation where a preexisting repository on GitHub needs to be migrated to the Aider workflow
+   ```shell
+   [ordinaryuser@Windows 20260721_Aider_Migrator_WSL]$ project-init '20260713_AZ_Live_Slides'
+    --- Assessing Environment: 20260713_AZ_Live_Slides ---
+    --> Querying GitHub for existing repositories...
+    --> State: Migration/Sync. Downloading existing public repository...
+    Cloning into '20260713_AZ_Live_Slides'...
+    remote: Enumerating objects: 53, done.
+    remote: Counting objects: 100% (53/53), done.
+    remote: Compressing objects: 100% (38/38), done.
+    remote: Total 53 (delta 9), reused 47 (delta 7), pack-reused 0 (from 0)
+    Receiving objects: 100% (53/53), 14.84 KiB | 14.84 MiB/s, done.
+    Resolving deltas: 100% (9/9), done.
+    --> Bootstrapping new private history repository...
+    Initialized empty Git repository in /home/ordinaryuser/GitHub/20260713_AZ_Live_Slides_Aider_History/.git/
+    [main (root-commit) xxxxxxx] Initialize portable Aider profile
+     1 file changed, 3 insertions(+)
+     create mode 100644 .aider.conf.yml
+    ✓ Created repository (GitHub-Name)/20260713_AZ_Live_Slides_Aider_History on github.com
+     https://github.com/(GitHub-Name)/20260713_AZ_Live_Slides_Aider_History
+    ✓ Added remote git@github.com:(GitHub-Name)/20260713_AZ_Live_Slides_Aider_History.git
+    Enumerating objects: 3, done.
+    Counting objects: 100% (3/3), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    To github.com:(GitHub-Name)/20260713_AZ_Live_Slides_Aider_History.git
+     * [new branch]      HEAD -> main
+    branch 'main' set up to track 'origin/main'.
+    ✓ Pushed commits to git@github.com:(GitHub-Name)/20260713_AZ_Live_Slides_Aider_History.git
+    --- Setup Complete. Active Directory: /home/ordinaryuser/GitHub/20260713_AZ_Live_Slides ---
+    [ordinaryuser@Windows user 20260713_AZ_Live_Slides]$
+   ```
+
+3. Situation where a preexisting repository on GitHub already was migrated to Aider
+   ```shell
+   
+   ```
