@@ -60,3 +60,24 @@
   Retype new password:
   passwd: password updated successfully
   ```
+- Change default user to non-Root
+  ```shell
+  [root@Windows user]# nano /etc/wsl.conf
+  [root@Windows user]# cat /etc/wsl.conf
+  [boot]
+  systemd = true
+
+  [user]
+  default=ordinaryuser
+  ```
+- Exit and Restart to confirm new default user
+  ```shell
+  [root@Windows user]# exit
+  PS> wsl --terminate RHEL10
+  The operation completed successfully.
+  PS> wsl
+  [ordinaryuser@Windows user]$ whoami
+  ordinaryuser
+  ```
+
+## Install Development Environment
